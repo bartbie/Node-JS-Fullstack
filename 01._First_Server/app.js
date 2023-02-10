@@ -1,6 +1,8 @@
-const app = require("express")();
-/* const express = require("express");
-const app = express(); */
+// const app = require("express")();
+const express = require("express");
+const app = express();
+
+app.use(express.json());
 
 // route (entire thing)
 //  HTTP method
@@ -32,6 +34,11 @@ app.get("/bat", (req, res) => {
 // /bottle/large
 app.get("/bottle/:bottleSize", (req, res) =>  {
     res.send({ bottleSize: req.params.bottleSize });
+});
+
+app.post("/package", (req, res) =>  {
+    console.log(req.body);
+    res.send({ message: req.body });
 });
 
 
