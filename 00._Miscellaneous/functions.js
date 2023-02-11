@@ -3,18 +3,18 @@
 // console.log(random(0, 10));
 
 function random(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) - min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 const randomAnonymousFunction = function (min, max) {
-    return Math.floor(Math.random() * (max - min + 1) - min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
 const randomArrowFunction = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1) - min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-const randomArrowFunctionCompact = (min, max) => Math.floor(Math.random() * (max - min + 1) - min);
+const randomArrowFunctionCompact = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 
 
