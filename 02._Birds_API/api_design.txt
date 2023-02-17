@@ -1,0 +1,6 @@
+
+GET /birds
+GET /birds/<id>
+
+
+
