@@ -16,7 +16,7 @@ const range = (n, m=undefined, step=undefined) => {
     return range(n, m).filter((_, i) => i%step==0)
 } 
 
-// NOTE: birds will always have same ID as index
+// NOTE: birds will always have same ID as index+1
 
 const birds = range(1, 11).map(i => ({
     id: i,
