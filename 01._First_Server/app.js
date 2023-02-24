@@ -31,6 +31,29 @@ app.get("/bat", (req, res) => {
     res.send({ message: `The bat is ${req.query.adjective}.` });
 });
 
+/* Time */
+app.get("/time/time", (req, res) => {    
+    res.send({ 
+        timeUTC: new Date(),
+        timeLocal: Date(),
+        unixTimestamp: Date.now()        
+    }); 
+});
+
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+app.get("/time/day", (req, res) => {
+    // new Date().toLocaleDateString("da-dk", { weekday: "long" })
+    res.send({ data: days[new Date().getDay()] });
+});
+
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+app.get("/time/month", (req, res) => {
+    res.send({ data: months[new Date().getMonth()] });
+});
+
+
 // /bottle/large
 app.get("/bottle/:bottleSize", (req, res) =>  {
     res.send({ bottleSize: req.params.bottleSize });
@@ -40,6 +63,7 @@ app.post("/package", (req, res) =>  {
     console.log(req.body);
     res.send({ message: req.body });
 });
+
 
 
 
