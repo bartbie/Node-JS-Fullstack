@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+    </style>
+    <body>
+        <div id="container">
+            <h1 id="title">Time until deadline</h1>
+            <p id="time_insert"></p>
+        </div>
+    </body>
+
+    <script>
+        const DEADLINE = new Date(2022, 3, 2, 23, 59, 59);
+        const current_time = () => new Date();
+
+        const delta_in_seconds = (date1, date2) => 
+            Math.abs((date1-date2)/1000);
+
+        const format_time = (seconds) =>
+            new Date(seconds*1000).toISOString().substring(11, 19);
+
+        const update_UI = (time) => {
+            document.getElementById("time_insert").textContent = time;
+        }
+
+        const timer = () => {
+            // imagine having pipe operator here...
+            seconds = delta_in_seconds(DEADLINE, current_time());
+            const time_str = format_time(seconds);
+            update_UI(time_str);
+        }
+
+        setInterval(timer, 500)
+    </script>
+</html>
