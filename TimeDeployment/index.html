@@ -16,14 +16,23 @@
     </body>
 
     <script>
-        const DEADLINE = new Date(2022, 3, 2, 23, 59, 59);
+        // i hate Date API.
+        const DEADLINE = new Date(2023, 2, 2, 24, 59);
         const current_time = () => new Date();
 
-        const delta_in_seconds = (date1, date2) => 
-            Math.abs((date1-date2)/1000);
+        const delta_in_seconds = (x, y) => 
+            ((y-x)/1000);
 
-        const format_time = (seconds) =>
-            new Date(seconds*1000).toISOString().substring(11, 19);
+        const format_time = (seconds) => {
+            checkTime = (i) => (i < 10) ? "0" + i : i;
+            
+            const as_date = new Date(seconds*1000);
+            const h = checkTime(as_date.getHours());
+            const m = checkTime(as_date.getMinutes());
+            const s = checkTime(as_date.getSeconds());
+            const sign = (seconds < 0)? '-' : '';
+            return `${sign}${h}:${m}:${s}`;
+        }
 
         const update_UI = (time) => {
             document.getElementById("time_insert").textContent = time;
