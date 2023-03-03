@@ -1,0 +1,34 @@
+{
+  "name": "upper",
+  "version": "0.0.1",
+  "description": "A motivation app with quotes, jokes and daily commands",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anderslatif/Kea_DAT_Node.js_2023_Spring.git"
+  },
+  "keywords": [
+    "motivation",
+    "jokes",
+    "daily",
+    "commands",
+    "upper",
+    "up",
+    "happy",
+    "good",
+    "time"
+  ],
+  "author": "Anders Latif",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anderslatif/Kea_DAT_Node.js_2023_Spring/issues"
+  },
+  "homepage": "https://github.com/anderslatif/Kea_DAT_Node.js_2023_Spring#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
