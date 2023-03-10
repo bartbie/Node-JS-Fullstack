@@ -1,0 +1,1 @@
+// task in the footer display the year and a copyright symbol  ©
