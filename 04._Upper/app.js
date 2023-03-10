@@ -5,7 +5,7 @@ import path from "path";
 
 app.use(express.static("public"));
 
-// import jokes from "./util/jokes.js";
+import jokes from "./util/jokes.js";
 
 
 app.get("/", (req, res) => {
