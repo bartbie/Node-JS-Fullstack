@@ -1,1 +1,3 @@
-// task in the footer display the year and a copyright symbol  ©
+const footerCopyrightP = document.getElementById("copyright-year");
+const year = new Date().getFullYear();
+footerCopyrightP.innerText = `© ${year}`;
