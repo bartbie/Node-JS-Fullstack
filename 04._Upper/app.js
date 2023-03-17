@@ -7,21 +7,21 @@ app.use(express.static("public"));
 
 // import jokes from "./util/jokes.js";
 
-import renderPage from "./util/templateEngine.js";
+import templateEngine from "./util/templateEngine.js";
 
-const frontpagePath = "./public/pages/frontpage/frontpage.html";
-const frontpagePage = renderPage(frontpagePath, {
+const frontpage = templateEngine.readPage("./public/pages/frontpage/frontpage.html");
+const frontpagePage = templateEngine.renderPage(frontpage, {
     tabTitle: "Upper | Welcome"
 });
 
-const jokesPath = "./public/pages/jokes/jokes.html";
-const jokesPage = renderPage(jokesPath, {
+const jokes = templateEngine.readPage("./public/pages/jokes/jokes.html");
+const jokesPage = templateEngine.renderPage(jokes, {
     tabTitle: "Upper | Jokes",
     cssLink: `<link rel="stylesheet" href="/pages/jokes/jokes.css">`
 });
 
-const IRLQuestsPath = "./public/pages/IRLQuests/IRLQuests.html";
-const IRLQuestsPage = renderPage(IRLQuestsPath, {
+const IRLQuests = templateEngine.readPage("./public/pages/IRLQuests/IRLQuests.html");
+const IRLQuestsPage = templateEngine.renderPage(IRLQuests, {
     tabTitle: "Upper | IRLQuests"
 });
 
