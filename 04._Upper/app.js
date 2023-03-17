@@ -27,9 +27,8 @@ app.get("/IRLQuests", (req, res) => {
 });
 
 app.get("/jokes", async (req, res) => {
-    const jokesPage = templateEngine.renderJokePage();
-    console.log(jokesPage);
-    res.send(jokesPage);
+    const jokesPage = await templateEngine.renderJokePage();
+    res.send(jokesPage);    
 });
 
 
