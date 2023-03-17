@@ -30,6 +30,12 @@ app.get("/museumGuards", (req, res) => {
     res.sendFile(__dirname + "/public/museumGuards/museumGuards.html");
 });
 
+app.get("/proxy", (req, res) => {
+    fetch('https://www.google.com')
+    .then(response => response.text())
+    .then(result => res.send(result));
+});
+
 
 /* API */
 
