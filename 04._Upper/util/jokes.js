@@ -16,6 +16,4 @@ async function getJoke() {
 }
 
 
-export default {
-    getJoke
-};
+export default getJoke;

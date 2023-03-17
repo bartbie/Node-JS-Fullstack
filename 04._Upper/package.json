@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/anderslatif/Kea_DAT_Node.js_2023_Spring#readme",
   "dependencies": {
+    "escape-html": "^1.0.3",
     "express": "^4.18.2",
     "sentiment": "^5.0.2"
   }
