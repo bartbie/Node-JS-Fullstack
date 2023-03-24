@@ -1,23 +1,20 @@
 <script>
-    const name = "Martin";
-    let greeting = "Hello";
+  import FavoriteBirds from "./lib/FavoriteBirds.svelte";
+  import Garden from "./lib/Garden.svelte";
+  import GardenGate from "./lib/GardenGate.svelte";
+  import Greeter from "./lib/Greeter.svelte";
 
-    function changeGreeting() {
-      if (greeting === "Hello") {
-        greeting = "Goodbye";
-      } else {
-        greeting = "Hello";
-      }
-    }
+
 </script>
 
 
-<h1 on:click={changeGreeting} on:keydown={changeGreeting}>{greeting} {name}.</h1>
+<Greeter />
+<Greeter name="Uncle Bob" greeting="Goodbye" />
+<Greeter name="Martin" />
 
+<FavoriteBirds />
 
-<style>
-  h1 {
-    color: burlywood;
-    user-select: none;
-  }
-</style>
+<GardenGate />
+
+<Garden />
+
