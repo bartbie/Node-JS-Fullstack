@@ -3,11 +3,13 @@ const app = express();
 
 app.use(express.static("public"));
 
-const tanks = [
-    { name: "Leopard", nationality: "Germany" },
-    { name: "Tiger", nationality: "Germany", year: 1943 },
-    { name: "M1 Abrams", version: "M1" }
-];
+
+// const tankUtil = require("./util/tanks.js");
+// console.log(tanksUtil.getTanks());
+
+const { getTanks, addTank } = require("./util/tanks.js");
+// console.log(getTanks());
+
 let visitorCount = 0;
 
 /* Pages */
@@ -24,10 +26,21 @@ app.get("/visitors", (req, res) => {
     res.sendFile(__dirname + "/public/visitors/visitors.html");
 });
 
+app.get("/museumGuards", (req, res) => {
+    res.sendFile(__dirname + "/public/museumGuards/museumGuards.html");
+});
+
+app.get("/proxy", (req, res) => {
+    fetch('https://www.google.com')
+    .then(response => response.text())
+    .then(result => res.send(result));
+});
+
+
 /* API */
 
 app.get("/api/tanks", (req, res) => {
-    res.send({ data: tanks });
+    res.send({ data: getTanks() });
 });
 
 app.get("/api/visitors", (req, res) => {
@@ -38,6 +51,12 @@ app.put("/api/visitors", (req, res) => {
     res.send({ data: ++visitorCount });
 });
 
+app.get("/api/guards", (req, res) => {
+    if (req.query.passport === "theskyisblue") {
+        return res.redirect("/api/tanks");        
+    }
+    res.send({ message: "You are not allowed to see the tanks. Give us the secret in the query string with the key being passpor. "});    
+});
 
 
 const PORT = 8080;
