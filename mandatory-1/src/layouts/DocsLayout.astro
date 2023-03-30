@@ -1,0 +1,150 @@
+---
+import MainLayout from "./MainLayout.astro";
+
+// const { frontmatter } = Astro.props;
+const SIDEBAR = [
+  { text: "Introduction", filename: "Introduction" },
+  { text: "Express JS", filename: "" },
+  { text: "Astro", filename: "" },
+  { text: "SSR", filename: "" },
+  { text: "About", filename: "" },
+] as const;
+---
+
+<MainLayout title="Docs">
+  <dev id="doc-layout">
+    <aside id="nav-column-left" title="Docs Navigation">
+      <nav>
+        <ul>
+          {
+            SIDEBAR.map((e) => (
+              <li class="doc_link">
+                <a class="link_inside" href={e.filename}>
+                  {e.text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <div id="remaining"></div>
+    </aside>
+    <main>
+      <div id="main-grid">
+        <article id="article" class="content">
+          <section class="main-section">
+            <slot />
+          </section>
+        </article>
+      </div>
+    </main>
+  </dev>
+</MainLayout>
+
+<style>
+  main {
+    padding: 1.5rem;
+    max-width: 160ch;
+  }
+
+  #doc-layout {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+  }
+
+  #remaining {
+    flex-grow: 1;
+  }
+
+  aside {
+    margin: 1.5rem;
+    position: fixed;
+    background-color: var(--theme-bg);
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  nav {
+    height: 100px;
+  }
+
+  ul {
+    margin-top: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items: stretch;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .doc_link {
+    margin: 5px;
+    display: flex;
+    /* align-items: center; */
+    /* background-color: rgba(var(--accent), 15%); */
+  }
+
+  .link_inside {
+    text-decoration: none;
+  }
+
+  .doc_link :hover {
+    background-color: rgba(var(--accent), 15%);
+    border-radius: 5px;
+  }
+
+  .content {
+    padding: 0;
+    max-width: 75ch;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-grid {
+    margin-left: 200px;
+    padding: 20px;
+  }
+
+  .content > section {
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 50em) {
+    .sm:hidden {
+      display: none;
+    }
+  }
+</style>
+
+<style is:inline>
+  /* code-blocks */
+  .astro-code {
+    line-height: 1.6;
+    margin: 0.75rem 0;
+    border: 1px solid rgba(var(--accent), 25%);
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.4rem;
+    color: rgb(var(--accent));
+  }
+  .astro-code code {
+  }
+</style>
+
+<style is:inline>
+  /* markdown */
+  h1 {
+    margin: 0;
+  }
+  p {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 1.75;
+    /* font-size: 16px; */
+  }
+</style>
