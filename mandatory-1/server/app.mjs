@@ -3,7 +3,6 @@ import { handler as ssrHandler } from '../dist/server/entry.mjs';
 
 const app = express();
 const PORT = 3000;
-console.log('lol')
 
 app.use(express.static('dist/client/'))
 app.use(ssrHandler);

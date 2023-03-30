@@ -2,67 +2,33 @@
 layout: ../../layouts/DocsLayout.astro
 title: Welcome to my docs!
 ---
-<!-- # Hi there!
-Welcome to my docs! I've createed this site ~~because i had to~~ to document what was on my NodeJS Fullstack course.
-## How did i do it?
-This documentation was written using AstroJS and served using ExpressJS
-## try it yourself!
-```bash
-npm create
- ``` -->
+# Hi there!
+Welcome to my docs! I've created this site ~~because i had to~~ to document what was on my NodeJS Fullstack course.
+## Requirements for this project
 
-# Express.js Documentation
+### code:
+- Serve the pages with Express.
+- Use Server-Side Rendering (SSR). 
+- Split up the documentation in pages rather than one long HTML page.
+- Should have some nice styling (custom or with a styling framework).
 
-Express.js is a popular web framework for Node.js that makes it easy to create robust and scalable web applications. This document aims to provide a comprehensive guide to using Express.js for building web applications.
+### documentation:
+- Should contain terminal commands.
+- Should contain code snippets.
+- Should contain all the tools we’ve used and explain them.
+- Should cover all the theory that we’ve touched upon.
 
-## Installation
+### admin page specifically:
+- Create (a) login/signup page(s). 
+- The admin panel should allow users to fill out the content for a new documentation page in the browser. This means input fields and text areas.
 
-To use Express.js in your Node.js project, you first need to install it. You can install it using npm, the package manager for Node.js.
+## How did i achieve it then?
 
-```sh
-npm install express
-```
+I've written my app using Astro.js framework that acts as a SSR middleware for Express.js app
 
-## Creating an Express Application
+## Try it yourself!
+To get started you just need to run either of those commands:
+- use the run script located inside root folder `./run.sh` from your terminal
+- use the command defined for the package: `npm run express`
 
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-```javascript
-const express = require('express');
-const app = express();
-```
-
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
-
-To create an Express.js application, you need to require the Express.js module and create an instance of it. Here's how you can do it:
+### Read rest of the documentation to get how it was created!
