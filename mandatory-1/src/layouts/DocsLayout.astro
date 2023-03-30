@@ -1,21 +1,21 @@
 ---
 import MainLayout from "./MainLayout.astro";
-
+import { SIDEBAR } from "../../ROUTES";
 // const { frontmatter } = Astro.props;
-const SIDEBAR = [
-  { text: "Introduction", filename: "Introduction" },
-  { text: "Express JS", filename: "" },
-  { text: "Astro", filename: "" },
-  { text: "SSR", filename: "" },
-  { text: "About", filename: "" },
-] as const;
+
+// export type Props = {
+//   title: string
+// }
+
+// const {title} = Astro.props;
 ---
 
 <MainLayout title="Docs">
+<!-- <MainLayout title={title}> -->
   <dev id="doc-layout">
     <aside id="nav-column-left" title="Docs Navigation">
-      <nav>
-        <ul>
+      <nav id="left-nav">
+        <ul id="side-ul">
           {
             SIDEBAR.map((e) => (
               <li class="doc_link">
@@ -41,7 +41,7 @@ const SIDEBAR = [
   </dev>
 </MainLayout>
 
-<style>
+<style is:inline>
   main {
     padding: 1.5rem;
     max-width: 160ch;
@@ -65,11 +65,11 @@ const SIDEBAR = [
     height: 100%;
   }
 
-  nav {
+  #left-nav {
     height: 100px;
   }
 
-  ul {
+  #side-ul {
     margin-top: 0;
     padding: 0;
     display: flex;
