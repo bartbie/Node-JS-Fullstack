@@ -1,0 +1,79 @@
+---
+import LoginLayout from "../../layouts/LoginLayout.astro";
+---
+
+<LoginLayout title="Log in">
+  <div id="form-div">
+    <form id="login-form">
+      <div class="label-input">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div class="label-input">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <div class="filler"></div>
+      <input id="submit" type="submit" value="Login" />
+    </form>
+  </div>
+</LoginLayout>
+
+<style>
+  label {
+    font-weight: 400;
+    font-size: 1.5em;
+    color: rgb(85, 80, 80);
+  }
+
+  input {
+    height: 2.5rem;
+  }
+
+  .label-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  #submit {
+    font-size: 1.15rem;
+    font-weight: 450;
+    /* background-color: rgba(255,255,255, 0); */
+  }
+
+  form {
+    margin-top: -1rem;
+    margin-bottom: -0.5rem;
+    width: 25rem;
+    height: 17rem;
+    display: flex;
+    flex-direction: column;
+    /* padding: 5rem; */
+    justify-content: space-evenly;
+  }
+</style>
+
+<script>
+  import { LOGINS } from "../../../CONSTS";
+  (() => {
+    console.log("Possible usernames and passwords pairs:");
+    console.table(LOGINS);
+    const form = document.getElementById("login-form");
+    if (form == null) { console.error("can't find the form!"); return; }
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const html_username = document.getElementById( "username") as HTMLInputElement | null;
+      const html_password = document.getElementById( "password") as HTMLInputElement | null;
+      if (html_username == null || html_password == null) { console.error("can't find username or password!"); return; }
+      const username = html_username.value;
+      const password = html_password.value;
+      if (LOGINS.find((e) => e.user == username && e.password == password)) {
+        alert("Welcome!");
+        window.location.pathname = `/docs/`;
+      } else {
+        alert("Invalid login credentials. Please try again.");
+      }
+    });
+  })();
+</script>

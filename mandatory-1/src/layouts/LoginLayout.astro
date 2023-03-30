@@ -1,0 +1,43 @@
+---
+import MainLayout from "./MainLayout.astro";
+export type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<MainLayout title={title}>
+  <div id="login-layout">
+    <div id="center-box">
+      <main>
+        <slot />
+      </main>
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  #login-layout {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: table;
+  }
+  #center-box {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  main {
+    line-height: 1.6;
+    /* margin: 0.75rem 0; */
+    border: 1px solid rgba(var(--accent), 25%);
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.4rem;
+    color: rgb(var(--accent));
+    display: table; /* shrinks to fit content */
+    margin: auto;
+  }
+</style>
