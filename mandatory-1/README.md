@@ -31,6 +31,11 @@ The project runs on port `3000` (yes, it's hardcoded).
 
 - [handy localhost link](http:localhost:3000/)
 
+# Deployment
+
+https://astro-test-production-45d7.up.railway.app
+
+
 Read the rest of the documentation there.
 
 Enjoy!
