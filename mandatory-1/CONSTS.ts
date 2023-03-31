@@ -1,8 +1,8 @@
 export const SIDEBAR = [
   { text: "Introduction/About", filename: "introduction" },
   { text: "Express.js", filename: "express-js" },
-  { text: "Astro", filename: "" },
-  { text: "SSR", filename: "" },
+  { text: "SSR && Astro", filename: "astro" },
+  { text: "How", filename: "how" },
 ] as const;
 
 // this is *obviously* not how you're supposed to do real auth
