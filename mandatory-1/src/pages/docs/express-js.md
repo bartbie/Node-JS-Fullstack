@@ -92,7 +92,7 @@ app.delete("/endpoint/:id", (req, res) => {
 
 ### Regex-matched Routes
 
-What if we want more? What if we want our routes to be handled by a pattern, so we don't need to write/pass the same function for our [bat, cat, fat, etc.] routes? That's where regular expressions comes in with help.
+What if we want more? What if we want our routes to be handled by a pattern, so we don't need to write/pass the same function for our [bat, cat, fat, etc.] routes? That's where regular expressions come with help.
 
 ```js
 app.patch(/[a-zA-z]at/, (req, res) => { 
